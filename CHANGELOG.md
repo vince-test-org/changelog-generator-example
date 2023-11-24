@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
+### Miscellaneous Tasks
+
+- On push tags
+
+## [0.2.0] - 2023-11-24
+
 ### Bug Fixes
 
 - Tag pattern
