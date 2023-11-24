@@ -8,7 +8,11 @@ $ git cliff --init
 install and init [git-cliff](https://github.com/orhun/git-cliff) config
 
 ```sh
-git cliff -o
+$ git cliff
 ```
-generate changelog
+generate changelog to stdout
 
+```sh
+$ git cliff -o
+```
+generate changelog to `CHANGELOG.md`
