@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [unreleased]
+
+### Miscellaneous Tasks
+
+- Update readme ([#1](https://github.com/vince-test-org/changelog-generator-example/issues/1)) ([5f71f69](https://github.com/vince-test-org/changelog-generator-example/commit/5f71f697e63b200066ee999b4748af412b446210))
+
 ## [0.3.0] - 2023-11-24
 
 ### Features
