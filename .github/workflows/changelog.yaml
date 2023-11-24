@@ -1,0 +1,40 @@
+name: Update CHANGELOG
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  git-cliff-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Generate a changelog
+        uses: orhun/git-cliff-action@v2
+        id: git-cliff
+        with:
+          config: cliff.toml
+          args: --verbose
+        env:
+          OUTPUT: CHANGELOG.md
+
+      - name: Set github-actions bot config
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Commit and push CHANGELOG, only if there are any changes
+        run: |
+          if [[ -n $(git status -s) ]]; then
+            git add CHANGELOG.md
+            git commit -m "Update CHANGELOG"
+            git push origin HEAD
+          fi
