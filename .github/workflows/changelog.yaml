@@ -2,6 +2,8 @@ name: Update CHANGELOG
 
 on:
   push:
+    tags:
+      - '*'
     branches:
       - main
 
